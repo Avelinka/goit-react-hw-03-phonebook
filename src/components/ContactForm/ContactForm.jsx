@@ -51,7 +51,13 @@ export const ContactForm = ({ onAddContact }) => {
             <BsFillPersonFill size="18" />
             Name
           </LabelWrap>
-          <Field type="text" name="name" placeholder="Jane Doe" required />
+          <Field
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Jane Doe"
+            required
+          />
           <ErrorMessage name="name" component="span" />
         </Label>
         <Label htmlFor="number">
@@ -59,7 +65,13 @@ export const ContactForm = ({ onAddContact }) => {
             <BsTelephoneFill size="16" />
             Number
           </LabelWrap>
-          <Field type="tel" name="number" placeholder="111-11-11" required />
+          <Field
+            type="tel"
+            id="number"
+            name="number"
+            placeholder="111-11-11"
+            required
+          />
           <ErrorMessage name="number" component="span" />
         </Label>
         <AddBtn type="submit">

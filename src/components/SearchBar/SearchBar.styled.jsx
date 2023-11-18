@@ -9,7 +9,7 @@ export const SearchLabel = styled.label`
   margin: 0 auto ${p => p.theme.spacing(5)};
 `;
 
-export const SearchWrap = styled.div`
+export const SearchWrap = styled.span`
   display: flex;
   gap: ${p => p.theme.spacing(2)};
   align-items: center;

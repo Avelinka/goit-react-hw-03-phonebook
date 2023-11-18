@@ -20,7 +20,7 @@ export const Label = styled.label`
   gap: ${p => p.theme.spacing(1)};
 `;
 
-export const LabelWrap = styled.div`
+export const LabelWrap = styled.span`
   display: flex;
   align-items: center;
   gap: ${p => p.theme.spacing(2)};

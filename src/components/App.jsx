@@ -13,11 +13,31 @@ import { ContactForm } from './ContactForm/ContactForm';
 import { SearchBar } from './SearchBar/SearchBar';
 import { ContactList } from './ContactList/ContactList';
 
+const storageKey = 'contacts';
+
 export class App extends Component {
   state = {
     contacts: initialContacts,
     filter: '',
   };
+
+  componentDidMount() {
+    const savedContacts = window.localStorage.getItem(storageKey);
+    if (savedContacts !== null) {
+      this.setState({
+        contacts: JSON.parse(savedContacts),
+      });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.contacts !== this.state.contacts) {
+      window.localStorage.setItem(
+        storageKey,
+        JSON.stringify(this.state.contacts)
+      );
+    }
+  }
 
   addContact = newContact => {
     const { contacts } = this.state;
